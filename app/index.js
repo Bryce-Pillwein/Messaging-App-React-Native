@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { StyleSheet, ScrollView, View, Text, TextInput, Pressable } from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+
 // Componenets
 import ContainerMessage from "@/components/ContainerMessage";
 
@@ -9,6 +10,10 @@ import ContainerMessage from "@/components/ContainerMessage";
 import gss from "@/globalStyles";
 import PaddingBlock from "@/components/UI/UIPaddingBlock";
 import IconGeneral from '@/components/Icons/IconGeneral';
+
+
+// TESTING * DELETE
+import { Link } from 'expo-router';
 
 
 export default function Index() {
@@ -55,6 +60,8 @@ export default function Index() {
     { flex: 1, paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }]}>
 
       <Text style={[gss.fs20, { textAlign: 'center', }]}>Messaging App</Text>
+
+      <Link href="/chats">Chats</Link>
 
       <ScrollView
         ref={scrollViewRef}
