@@ -15,6 +15,7 @@ const gss = StyleSheet.create({
 
     // Font Family
     // ffCallingCode: { fontFamily: 'CallingCode' },
+    ffIsb: { fontFamily: 'Inter-sb' },
 
     // Colors
     cpink: { color: '#FF3EB5' },
@@ -26,7 +27,7 @@ const gss = StyleSheet.create({
     // Background Colors
     bgpink: { color: '#FF3EB5' },
     bgyellow: { color: '#FFE900' },
-    cbg: { backgroundColor: 'hsl(0, 0%, 10%)' },
+    cbg: { backgroundColor: 'hsl(0, 0%, 95%)' },
     cbg15: { backgroundColor: 'hsl(0, 0%, 15%)' },
     cbg20: { backgroundColor: 'hsl(0, 0%, 20%)' },
     cbg25: { backgroundColor: 'hsl(0, 0%, 25%)' },
@@ -38,14 +39,20 @@ const gss = StyleSheet.create({
      */
 
     // Container
-    containerMain: {
+    containerScreen: {
         flex: 1,
-        backgroundColor: 'hsl(0, 0%, 80%)',
+        backgroundColor: 'hsl(0, 0%, 95%)',
     },
-    // Wrapper
-    wrapperMain: {
+    containerContent: {
         flex: 1,
-        width: '95%',
+        width: '90%',
+        alignSelf: 'center',
+    },
+    // Main Page Title
+    mainPageTitle: {
+        textAlign: 'center',
+        fontSize: 30,
+        fontFamily: 'FetTrumDsch'
     },
     // Align Center
     alCnt: {
@@ -53,6 +60,9 @@ const gss = StyleSheet.create({
     },
     alCntTxt: {
         textAlign: 'center',
+    },
+    jstCnt: {
+        justifyContent: 'center'
     },
     // Button
     btnDefault: {

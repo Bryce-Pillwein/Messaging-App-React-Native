@@ -57,7 +57,7 @@ export default function Index() {
 
   return (
     <View style={[gss.containerMain,
-    { flex: 1, paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }]}>
+    { paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }]}>
 
       <Text style={[gss.fs20, { textAlign: 'center', }]}>Messaging App</Text>
 

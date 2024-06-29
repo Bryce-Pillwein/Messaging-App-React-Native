@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { StyleSheet, ScrollView, View, Text, TextInput, Pressable } from "react-native";
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 
 // Componenents
@@ -9,35 +8,39 @@ import IconGeneral from '@/components/Icons/IconGeneral';
 
 // Styles
 import gss from "@/globalStyles";
+import AppSafeAreaContentWrapper from '@/components/SafeAreaWrappers/AppSafeAreaContentWrapper';
+import Txt from '@/components/UI/UIText';
 
 
 export default function Index() {
-  const insets = useSafeAreaInsets();
   const [searchQuery, setSearchQuery] = useState("");
 
+
+  const createNewChat = () => {
+
+  };
+
   return (
-    <View style={[gss.containerMain,
-    { flex: 1, paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }]}>
-
-
+    <AppSafeAreaContentWrapper>
+      {/* HEADER */}
       <View style={ss.headerWrapper}>
-        <Text style={{ flex: 1 }}>Chats</Text>
-        <Pressable onPress={() => createNewChat() /** OR LINK TO NEW CHAT PAGE */}>
-          <IconGeneral type='add-circle' fill='#fff' size='28' />
+        <Txt style={ss.pageHeading}>Chats</Txt>
+        <Pressable onPress={() => createNewChat()} style={ss.btnCreateNewChat}>
+          <IconGeneral type='add' fill='white' size={30} />
         </Pressable>
       </View>
 
-      <View style={ss.wrapperInput}>
-        <TextInput
-          value={searchQuery}
-          onChangeText={(text) => setSearchQuery(text)}
-          style={[gss.input, ss.input]}
-          placeholder='Search'
-          enterKeyHint='search'
-        />
-      </View>
 
-      <ScrollView style={{ flex: 1, width: '100%' }} contentContainerStyle={{ alignItems: 'center' }}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={ss.wrapperInput}>
+          <TextInput
+            value={searchQuery}
+            onChangeText={(text) => setSearchQuery(text)}
+            style={ss.input}
+            placeholder='Search'
+            enterKeyHint='search'
+          />
+        </View>
         {/* 
               Chat Banners     
          */}
@@ -58,45 +61,43 @@ export default function Index() {
 
         </View> */}
       </ScrollView>
-
-    </View >
+    </AppSafeAreaContentWrapper>
   );
 }
 
 
 const ss = StyleSheet.create({
-
+  // Page Heading
   headerWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    width: '100%',
-    backgroundColor: 'hsl(0 0% 50%)',
     paddingVertical: 15,
-    paddingHorizontal: 10,
+  },
+  pageHeading: {
+    fontFamily: 'Inter-sb',
+    fontSize: 18,
   },
 
   wrapperInput: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '100%',
-    backgroundColor: 'hsl(0 0% 70%)',
     paddingVertical: 15,
-    paddingHorizontal: 10,
   },
   input: {
     flex: 1,
     fontSize: 16,
     height: 40,
-    backgroundColor: 'hsl(0 0% 60%)',
+    backgroundColor: 'hsl(0 0% 90%)',
     borderRadius: 15,
     alignSelf: 'center',
     paddingHorizontal: 15,
     paddingVertical: 2,
   },
-  btnSend: {
-    paddingHorizontal: 3,
-    paddingVertical: 3,
+
+  btnCreateNewChat: {
     borderRadius: 5,
-  },
+    backgroundColor: 'hsl(0 0% 20%)'
+  }
+
 })
